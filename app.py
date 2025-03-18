@@ -22,8 +22,8 @@ from scipy import signal
 from numpy.fft import fft, fftfreq
 
 # Quantum Libraries
-#from qiskit import QuantumCircuit, Aer, execute
-#from qiskit.visualization import plot_bloch_multivector, plot_histogram
+# from qiskit import QuantumCircuit, Aer, execute
+# from qiskit.visualization import plot_bloch_multivector, plot_histogram
 
 # Additional Libraries
 from streamlit_ace import st_ace  # For symbolic input editor
@@ -48,6 +48,7 @@ from utils import (
 options = st.sidebar.radio(
     "Select a Tool:",
     [
+        "Home page",
         "Plot Graph",
         #"Interactive Tutorials",
         #"Save and Load Sessions",
@@ -81,10 +82,10 @@ Instagram: [@theaaryansingh](https://instagram.com/theaaryansingh)
 """)
 
 # Help Section
-with st.sidebar.expander("Help"):
-    st.write("""
-   - I AM AARYAN.
-    """)
+# with st.sidebar.expander("Help"):
+#     st.write("""
+#    - I AM AARYAN.
+#     """)
 
 # Plot Graph Section
 if options == "Plot Graph":
@@ -2060,3 +2061,66 @@ elif options == "Quantum Entanglement Simulator":
     if __name__ == "__main__":
         main()
 
+elif options == "Home page":
+    
+    import streamlit as st
+
+    # 1. Must be the first Streamlit command:
+    #st.set_page_config(page_title="Graphium", layout="wide")
+
+    # 2. Custom CSS to hide the default header/menu and footer
+    hide_streamlit_style = """
+    <style>
+    #MainMenu {visibility: hidden;}     /* Hide the hamburger menu */
+    header {visibility: hidden;}        /* Hide the default header */
+    footer {visibility: hidden;}        /* Hide the 'Made with Streamlit' footer */
+    </style>
+    """
+    st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+
+    # 3. Main Page Content
+    st.markdown(
+        """
+        <h1 style="text-align: center; font-family: 'Times New Roman', Times, serif; margin-top: 20px; font-size: 3.5rem;">
+        Graphium
+        </h1>
+        <h2 style="text-align: center; color: #ccc; margin-bottom: 2rem; font-size: 1.75rem;">
+        Where Mathematics Meets Visualization
+        </h2>
+        <p style="color: #ddd; font-size: 1.1rem; max-width: 800px; margin: auto; line-height: 1.6;">
+        Graphium is an advanced mathematical visualization platform designed for students,
+        researchers, and professionals. It bridges the gap between abstract mathematical concepts
+        and interactive, dynamic representations.
+        </p>
+
+        <h3 style="color: #fff; margin-top: 2rem; font-size: 1.8rem;">
+        Why Graphium?
+        </h3>
+        <ul style="color: #ddd; font-size: 1.1rem; line-height: 1.6;">
+        <li><span style="color: #4CAF50; font-weight: 600;">Intuitive Visualizations:</span> Explore mathematical structures with clarity.</li>
+        <li><span style="color: #4CAF50; font-weight: 600;">Advanced Computation:</span> Leverage real-time computation for precise results.</li>
+        <li><span style="color: #4CAF50; font-weight: 600;">Multi-Disciplinary Utility:</span> Useful for Physics, Engineering, Economics, and more.</li>
+        <li><span style="color: #4CAF50; font-weight: 600;">Customization & Interactivity:</span> Modify parameters and observe instant updates.</li>
+        </ul>
+
+        <h3 style="color: #fff; margin-top: 2rem; font-size: 1.8rem;">
+        Key Features
+        </h3>
+        <ul style="color: #ddd; font-size: 1.1rem; line-height: 1.6;">
+        <li><span style="color: #4CAF50; font-weight: 600;">Graph Plotting:</span> 2D & 3D function plotting with smooth rendering.</li>
+        <li><span style="color: #4CAF50; font-weight: 600;">Quantum Mechanics Simulations:</span> Visualize wavefunctions, probability densities, and quantum states.</li>
+        <li><span style="color: #4CAF50; font-weight: 600;">Signal Processing & Optimization:</span> Fourier transforms, spectrograms, and optimization techniques.</li>
+        <li><span style="color: #4CAF50; font-weight: 600;">Higher-Dimensional Representations:</span> Tesseracts, fractals, and chaotic systems brought to life.</li>
+        </ul>
+        <p style="color: #ddd; font-size: 1.1rem; max-width: 800px; margin: auto; line-height: 1.6;">
+        Graphium transforms complex mathematical concepts into tangible, interactive experiences,
+        making learning and research more insightful than ever.
+        </p>
+
+        <hr style="margin-top: 3rem; border: none; border-top: 1px solid #333;" />
+        <p style="text-align: center; color: #aaa; margin-top: 1rem;">
+        Graphium – A new dimension to mathematics.
+        </p>
+        """,
+        unsafe_allow_html=True
+    )
