@@ -1,0 +1,12 @@
+streamlit
+numpy
+sympy
+matplotlib
+plotly
+pandas
+seaborn
+requests
+scipy
+qiskit
+streamlit-ace
+networkx
