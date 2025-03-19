@@ -1759,7 +1759,7 @@ elif options == "Signal Processing and Optimization":
 elif options == "Interactive Graph Theory Visualization":
 
     # Set full-width layout
-    st.set_page_config(layout="wide")
+    #st.set_page_config(layout="wide")
 
     # Function to generate different types of graphs
     def generate_graph(graph_type, num_nodes, prob, edges_per_node):
